@@ -1,29 +1,37 @@
-var randomNumber1 = Math.floor(Math.random() * 7) + 1;
 
-function diceImg() {
-  switch (randomNumber1) {
-  case randomNumber1 = 1:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice1.png')
-    break;
-  case randomNumber1 = 2:
-     document.querySelector(".dice1 img").setAttribute("src", 'images/dice2.png')
-    break;
-  case randomNumber1 = 3:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice3.png')
-    break;
-  case randomNumber1 = 4:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice4.png')
-    break;
-  case randomNumber1 = 5:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice5.png')
-    break;
-  case randomNumber1 = 6:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice6.png')
-    default:
-    document.querySelector(".dice1 img").setAttribute("src", 'images/dice6.png')
+//Player name
+var Player1 = "Player 1";
+var Player2 = "Player 2";
+
+// Change player name
+function editNames() {
+  player1 = prompt("Change Player1 name");
+  player2 = prompt("Change player2 name");
+
+  document.querySelector("p.Player1").innerHTML = player1;
+  document.querySelector("p.Player2").innerHTML = player2;
 }
 
-}
-console.log(randomNumber1);
+function rollTheDice() {
+  setTimeout(function () {
 
-diceImg();
+    var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+    document.querySelector(".img1").setAttribute("src", "images/dice" + randomNumber1 + ".png");
+
+    document.querySelector(".img2").setAttribute("src", "images/dice" + randomNumber2 + ".png");
+
+    if (randomNumber1 === randomNumber2) {
+      document.querySelector("h1").innerHTML = "Draw!";
+    }
+
+    else if (randomNumber1 < randomNumber2) {
+      document.querySelector("h1").innerHTML = (player2 + " Wins!");
+    }
+
+    else {
+      document.querySelector("h1").innerHTML = (player1 + " Wins!");
+    }
+  }, 2500);
+}

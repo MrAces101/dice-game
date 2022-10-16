@@ -10,26 +10,32 @@
   <body>
 
     <div class="container">
-      <h1>Refresh Me</h1>
+      <h1>Roll the dice!</h1>
+
+      <div class="container top">
+        <p class="names">Enter names to play!</p>
+        <button type="button" class="btn" onClick="editNames()">
+          Edit Names
+        </button>
+      </div>
 
       <div class="dice">
-        <p>Player 1</p>
+        <p class="Player1">Player 1</p>
         <img class="img1" src="images/dice6.png">
       </div>
 
       <div class="dice">
-        <p>Player 2</p>
+        <p class="Player2">Player 2</p>
         <img class="img2" src="images/dice6.png">
       </div>
 
     </div>
 
     <div class="container bottom">
-      <button type="button" class="btn" onClick="rollDice()">
+      <button type="button" class="btn" onClick="rollTheDice()">
         Roll The Dice
       </button>
     </div>
-
 
   <script src="js/index.js" charset="utf-8"></script>
   </body>
